@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PTIT_CNTT3_IT104_session2_exercise4</title>
+  </head>
+  <body>
+    <script>
+      let phoneBook = [];
+
+      function addContact(userName, PhoneUser, emailUser) {
+        // tao 1 obj
+        let newObj = {
+          fullName: userName,
+          phone: PhoneUser,
+          email: emailUser,
+        };
+        phoneBook.push(newObj);
+      }
+
+      addContact("duc", "0123456", "ducg@gmail");
+      addContact("hoa", "0123456", "ducg@gmail");
+      addContact("mai", "0123456", "ducg@gmail");
+      addContact("xuan", "0123456", "ducg@gmail");
+
+      function displayContact(phoneBook) {
+        phoneBook.forEach(element => {
+            console.log(`tên:${element.fullName} | SĐT:${element.phone} | EMAIL:${element.email}`)
+        });
+      }
+
+      displayContact(phoneBook);
+    </script>
+  </body>
+</html>

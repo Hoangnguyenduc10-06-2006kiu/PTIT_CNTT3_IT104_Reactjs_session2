@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let fullName = "John";
+      let age = 25;
+      let city = "Hanoi";
+      let country = "Vietnam";
+      let email = "john@example.com";
+      let phone = "0123456789";
+      let title = "Developer";
+      let company = "Tech Corp";
+
+      function displayUserInfo(
+        fullName,
+        age,
+        city,
+        country,
+        email = "unknown",
+        phone = "unknown",
+        title = "unknown",
+        company = "unknown"
+      ) {
+        let person = {
+          namePerson: fullName,
+          agePerson: age,
+          location: {
+            cityPerson: city,
+            countryPerson: country,
+          },
+          contact: {
+            emailPerson: email,
+            phonePerson: phone,
+          },
+          job: {
+            titlePerson: title,
+            companyPerson: company,
+          },
+        };
+        let { namePerson, agePerson } = person;
+        let { cityPerson, countryPerson } = person.location;
+        let { emailPerson, phonePerson } = person.contact;
+        let { titlePerson, companyPerson } = person.job;
+
+        return `${namePerson} is ${agePerson} years old, lives in ${cityPerson}, ${countryPerson}, works as ${titlePerson} at ${companyPerson}, and can be contacted via ${emailPerson} or ${phonePerson}.`;
+      }
+      let result = displayUserInfo(
+        fullName,
+        age,
+        city,
+        country,
+        email,
+        phone,
+        title,
+        company
+      );
+      console.log(result);
+    </script>
+  </body>
+</html>

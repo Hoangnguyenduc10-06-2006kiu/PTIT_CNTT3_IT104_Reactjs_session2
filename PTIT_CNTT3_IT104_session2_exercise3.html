@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let typeConsole = (name = "log")=> name ==="log" 
+        ? console.log("Đây là type : log")     : name ==="warn" 
+        ? console[name]("Đây là type : warn ") : name === "error" 
+        ? console[name]("Đât là type : error") : console.log("Đât là type : log");
+        
+        typeConsole("log")
+        typeConsole("warn")
+        typeConsole("error")
+        typeConsole()
+    </script>
+</body>
+</html>
