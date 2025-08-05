@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Summary</title>
+  </head>
+  <body>
+    <script>
+      let student = {
+        name: "Dev",
+        age: 20,
+        listMonhoc: [
+          { subject: "Math", score: 9 },
+          { subject: "English", score: 7.5 },
+          { subject: "Physics", score: 6 },
+          { subject: "Literature", score: 8.5 },
+        ],
+      };
+
+      function getStudentSummary(student) {
+        let totalScore = 0;
+        let bestSubject = student.listMonhoc[0];
+        let worstSubject = student.listMonhoc[0];
+
+        student.listMonhoc.forEach((element) => {
+          totalScore += element.score;
+          if (element.score > bestSubject.score) {
+            bestSubject = element;
+          }
+          if (element.score < worstSubject.score) {
+            worstSubject = element;
+          }
+        });
+
+        let avg = totalScore / student.listMonhoc.length;
+
+        return `
+          ${student.name} is ${student.age} years old.
+          Average score: ${avg.toFixed(2)} → ${
+          avg >= 8.5
+            ? "Học sinh được đánh giá là giỏi."
+            : avg >= 7
+            ? "Học sinh được đánh giá là khá."
+            : avg >= 5
+            ? "Học sinh được đánh giá là trung bình."
+            : "Học sinh được đánh giá là yếu."
+        }
+          Best subject: ${bestSubject.subject} 
+          Weakest subject: ${worstSubject.subject} 
+        `;
+      }
+      let result = getStudentSummary(student);
+      console.log(result)
+    </script>
+  </body>
+</html>
